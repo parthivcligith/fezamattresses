@@ -2008,7 +2008,7 @@ body.modal-open {
 
 @media (max-width: 768px) {
     .hero-text h1.gradient-text {
-        margin-top: -20px;
+        margin-top: -100px;
     }
 }
 
@@ -3058,3 +3058,14 @@ html {
     transform: translateY(0);
   }
 }
+
+    /* Your existing CSS styles... */
+    
+    /* Hide hero features on mobile and tablet - Desktop only */
+    @media (max-width: 1024px) {
+        .hero-features {
+            display: none !important;
+        }
+    }
+    
+    /* Rest of your existing styles... */
