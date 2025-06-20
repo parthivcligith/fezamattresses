@@ -1,0 +1,191 @@
+/* Additional animations CSS */
+
+/* Prepare elements for scroll animations */
+.animate-ready {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text highlight animations */
+.highlight-text {
+  position: relative;
+  display: inline-block;
+}
+
+/* Remove the underline animation by commenting out or removing these lines
+.highlight-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+  transition: width 0.8s ease;
+}
+
+.highlight-text.animate-in::after {
+  width: 100%;
+}
+*/
+
+/* Logo animation */
+.nav-logo img {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Button hover animations */
+.btn-primary:hover {
+  animation: buttonPulse 0.8s ease-in-out;
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(0, 102, 169, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 102, 169, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(0, 102, 169, 0.2);
+  }
+}
+
+/* Text wave animation for headings */
+.wave-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.wave-text span {
+  display: inline-block;
+  animation: textWave 1s ease-in-out infinite;
+  animation-delay: calc(var(--char-index) * 0.05s);
+}
+
+@keyframes textWave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Feature icon animations */
+.feature-icon i {
+  animation: iconSpin 5s linear infinite;
+}
+
+@keyframes iconSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Testimonial card hover effect */
+.testimonial-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 102, 169, 0.15);
+}
+
+/* Stats counter animation */
+.stat-number {
+  display: inline-block;
+  position: relative;
+}
+
+/* Floating action button animations */
+.fab-btn {
+  animation: fabFloat 3s ease-in-out infinite;
+  animation-delay: calc(var(--btn-index) * 0.2s);
+}
+
+.floating-actions .fab-btn:nth-child(1) {
+  --btn-index: 1;
+}
+
+.floating-actions .fab-btn:nth-child(2) {
+  --btn-index: 2;
+}
+
+.floating-actions .fab-btn:nth-child(3) {
+  --btn-index: 3;
+}
+
+@keyframes fabFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Text gradient animation */
+.gradient-text {
+  background: linear-gradient(90deg, #ff5656, #00aedb, #b94539, var(--primary-blue));
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientText 8s ease infinite;
+  display: inline-block;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gradient-text {
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: none;
+  }
+}
+
+

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Dynamic SEO Meta Tags -->
+    <title id="page-title">Product Details | Feza Mattresses Kerala</title>
+    <meta name="description" id="page-description" content="Premium mattress details from Kerala's #1 mattress brand - Feza Mattresses. Quality sleep solutions with 10-year warranty.">
+    <meta name="keywords" content="mattress details Kerala, Feza mattresses, premium mattresses Kochi, orthopedic mattresses Kerala">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" id="og-title" content="Product Details | Feza Mattresses Kerala">
+    <meta property="og:description" id="og-description" content="Premium mattress details from Kerala's #1 mattress brand">
+    <meta property="og:image" id="og-image" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="additional-animations.css">
+    <link rel="stylesheet" href="about-us.css">
+    <link rel="stylesheet" href="preloader.css">
+    <link rel="stylesheet" href="additional-styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Product Details Specific Styles */
+        .product-details-hero {
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, var(--light-gray), var(--white));
+            min-height: 60vh;
+        }
+
+        .product-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .product-image-section {
+            position: sticky;
+            top: 100px;
+        }
+
+        .main-product-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .main-product-image:hover {
+            transform: scale(1.02);
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .product-info-section {
+            padding: 2rem 0;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .product-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .product-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .price-note {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--light-blue);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-item i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .feature-item span {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .size-selection-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+        }
+
+        .size-selection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .size-options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .size-option {
+            padding: 0.8rem 0.5rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .size-option:hover {
+            border-color: var(--primary-blue);
+            background: var(--light-blue);
+        }
+
+        .size-option.selected {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .thickness-options {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .thickness-option {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--light-blue);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .thickness-option:hover {
+            border-color: var(--primary-blue);
+            background: var(--light-blue);
+        }
+
+        .thickness-option.selected {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .btn-large {
+            flex: 1;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 60px;
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-size-guide {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            cursor: pointer;
+        }
+
+        .btn-size-guide:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .product-description {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+        }
+
+        .description-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .description-text {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .mattress-layers {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .layers-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .layers-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .layer {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--dark-gray);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .layer:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .related-products-section {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .related-products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .related-products-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 3rem;
+        }
+
+        .related-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-product-card {
+            background: var(--light-gray);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .related-product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .related-product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .related-product-info {
+            padding: 1.5rem;
+        }
+
+        .related-product-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-product-type {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .related-product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .related-product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .related-feature-tag {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .product-details-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-image-section {
+                position: static;
+            }
+
+            .main-product-image {
+                height: 300px;
+            }
+
+            .product-features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .size-options-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .thickness-options {
+                flex-direction: column;
+            }
+
+            .layers-diagram {
+                max-width: 100%;
+            }
+
+            .related-products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Size Guide Modal Enhancements */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #fff 0%, #fef7ed 100%);
+            margin: 20px;
+            padding: 0;
+            border: none;
+            border-radius: 20px;
+            width: 95%;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            animation: slideUp 0.4s ease-out;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #f97316;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-btn:hover {
+            background: #f97316;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid var(--light-blue);
+            border-top: 2px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="logo-container">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-D7BfjMM33bCmcBN3TBoF4CEPSP4eZE.png" alt="Feza Mattresses Logo" class="preloader-logo">
+                <i class="fas fa-bed floating-icon"></i>
+                <i class="fas fa-moon floating-icon"></i>
+                <i class="fas fa-cloud floating-icon"></i>
+                <i class="fas fa-star floating-icon"></i>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-percentage">0%</div>
+                <div class="loading-bar">
+                    <div class="loading-progress" id="loading-progress"></div>
+                </div>
+            </div>
+            <div class="loading-text">
+                <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>.</span><span>.</span><span>.</span>
+            </div>
+            <div class="sleep-fact" id="sleep-fact">
+                <h4>Did You Know?</h4>
+                <p>The right mattress can improve your sleep quality by up to 60% and reduce back pain significantly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Island Navigation -->
+    <nav class="island-navbar">
+        <div class="island-nav-container">
+            <div class="nav-logo">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-D7BfjMM33bCmcBN3TBoF4CEPSP4eZE.png" alt="Feza Mattresses Logo" height="40">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="index.html#custom" class="nav-link">Custom</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="favorites-btn" onclick="toggleFavorites()">
+                    <i class="fas fa-heart"></i>
+                    <span class="favorites-count" id="favorites-count">0</span>
+                </button>
+                <button class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Hero Section -->
+    <section class="product-details-hero">
+        <div class="product-details-container">
+            <!-- Product Images -->
+            <div class="product-image-section">
+                <img id="main-product-image" src="/placeholder.svg" alt="Product Image" class="main-product-image">
+                <div class="product-thumbnails" id="product-thumbnails">
+                    <!-- Thumbnails will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Product Information -->
+            <div class="product-info-section">
+                <div class="product-badge" id="product-badge">Kerala's Best</div>
+                <h1 class="product-title" id="product-title">Loading...</h1>
+                <p class="product-subtitle" id="product-subtitle">Premium Mattress</p>
+                <div class="product-price" id="product-price">₹0</div>
+                <p class="price-note">*Free delivery across Kerala | 10-year warranty included</p>
+
+                <!-- Product Features -->
+                <div class="product-features-grid" id="product-features-grid">
+                    <!-- Features will be loaded here -->
+                </div>
+
+                <!-- Size Selection -->
+                <div class="size-selection-section">
+                    <h3 class="size-selection-title">
+                        <i class="fas fa-ruler"></i>
+                        Choose Your Size
+                    </h3>
+                    <div class="size-options-grid" id="size-options-grid">
+                        <!-- Size options will be loaded here -->
+                    </div>
+                    
+                    <h4 style="margin: 1.5rem 0 1rem; color: var(--dark-blue);">
+                        <i class="fas fa-arrows-alt-v"></i>
+                        Thickness
+                    </h4>
+                    <div class="thickness-options" id="thickness-options">
+                        <!-- Thickness options will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn-large btn-whatsapp" id="buy-now-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Buy Now via WhatsApp
+                    </button>
+                    <button class="btn-large btn-size-guide" onclick="openSizeGuide()">
+                        <i class="fas fa-chart-bar"></i>
+                        Size Guide
+                    </button>
+                </div>
+
+                <!-- Product Description -->
+                <div class="product-description">
+                    <h3 class="description-title">About This Mattress</h3>
+                    <p class="description-text" id="product-description">Loading description...</p>
+                </div>
+
+                <!-- Mattress Layers -->
+                <div class="mattress-layers" id="mattress-layers-section">
+                    <h3 class="layers-title">Mattress Construction</h3>
+                    <div class="layers-diagram" id="layers-diagram">
+                        <!-- Layers will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="related-products-section">
+        <div class="related-products-container">
+            <h2 class="related-products-title">You May Also Like</h2>
+            <div class="related-products-grid" id="related-products-grid">
+                <!-- Related products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Modal -->
+    <div class="modal" id="size-guide-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSizeGuide()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="size-guide-container">
+                <h2>Kerala Mattress Size Guide</h2>
+                <p>Choose the perfect size for your Kerala home</p>
+                
+                <div class="size-chart-section">
+                    <h3>Size [Inches]:</h3>
+                    <div class="size-options-grid">
+                        <button class="size-option active" data-size="72x30">72 x 30</button>
+                        <button class="size-option" data-size="72x36">72 x 36</button>
+                        <button class="size-option" data-size="72x42">72 x 42</button>
+                        <button class="size-option" data-size="72x48">72 x 48</button>
+                        <button class="size-option" data-size="72x54">72 x 54</button>
+                        <button class="size-option" data-size="72x60">72 x 60</button>
+                        <button class="size-option" data-size="72x72">72 x 72</button>
+                        <button class="size-option" data-size="75x30">75 x 30</button>
+                        <button class="size-option" data-size="75x36">75 x 36</button>
+                        <button class="size-option" data-size="75x42">75 x 42</button>
+                        <button class="size-option" data-size="75x48">75 x 48</button>
+                        <button class="size-option" data-size="75x54">75 x 54</button>
+                        <button class="size-option" data-size="75x60">75 x 60</button>
+                        <button class="size-option" data-size="75x72">75 x 72</button>
+                        <button class="size-option" data-size="78x30">78 x 30</button>
+                        <button class="size-option" data-size="78x36">78 x 36</button>
+                        <button class="size-option" data-size="78x42">78 x 42</button>
+                        <button class="size-option" data-size="78x48">78 x 48</button>
+                        <button class="size-option" data-size="78x54">78 x 54</button>
+                        <button class="size-option" data-size="78x60">78 x 60</button>
+                        <button class="size-option" data-size="78x72">78 x 72</button>
+                        <button class="size-option" data-size="84x30">84 x 30</button>
+                        <button class="size-option" data-size="84x36">84 x 36</button>
+                        <button class="size-option" data-size="84x42">84 x 42</button>
+                        <button class="size-option" data-size="84x48">84 x 48</button>
+                        <button class="size-option" data-size="84x54">84 x 54</button>
+                        <button class="size-option" data-size="84x60">84 x 60</button>
+                        <button class="size-option" data-size="84x72">84 x 72</button>
+                    </div>
+                    
+                    <div class="thickness-section">
+                        <h3>Thickness:</h3>
+                        <div class="thickness-options">
+                            <button class="thickness-option active" data-thickness="152.4">152.4 mm (6")</button>
+                            <button class="thickness-option" data-thickness="203.2">203.2 mm (8")</button>
+                        </div>
+                    </div>
+                    
+                    <div class="size-guide-info">
+                        <div class="size-recommendations">
+                            <h4>Popular Kerala Sizes:</h4>
+                            <div class="recommendation-item">
+                                <strong>72 x 36</strong> - Single bed (Most common for children)
+                            </div>
+                            <div class="recommendation-item">
+                                <strong>75 x 48</strong> - Double bed (Popular for couples)
+                            </div>
+                            <div class="recommendation-item">
+                                <strong>78 x 60</strong> - Queen size (Premium choice)
+                            </div>
+                            <div class="recommendation-item">
+                                <strong>84 x 72</strong> - King size (Maximum comfort)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="selection-summary">
+                        <h4>Your Selection</h4>
+                        <div class="selection-details">
+                            <div class="selection-item">
+                                <span>Size: </span>
+                                <span id="selected-size">72 x 30 inches</span>
+                            </div>
+                            <div class="selection-item">
+                                <span>Thickness: </span>
+                                <span id="selected-thickness">152.4 mm (6")</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="size-guide-actions">
+                        <button class="size-guide-btn" onclick="applySizeSelection()">
+                            <i class="fas fa-check"></i>
+                            Apply Selection
+                        </button>
+                        <button class="size-guide-btn secondary" onclick="closeSizeGuide()">
+                            <i class="fas fa-times"></i>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-btn" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cart-total">0</span></strong>
+            </div>
+            <button class="btn-primary" onclick="checkout()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Favorites Sidebar -->
+    <div class="favorites-sidebar" id="favorites-sidebar">
+        <div class="favorites-header">
+            <h3>Favorites</h3>
+            <button class="close-btn" onclick="toggleFavorites()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="favorites-items" id="favorites-items">
+            <!-- Favorite items will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <button class="fab-btn" onclick="openSizeGuide()" title="Kerala Size Guide">
+            <i class="fas fa-ruler"></i>
+        </button>
+        <button class="fab-btn" onclick="openWhatsAppChat()" title="Chat with Kerala Experts">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <button class="fab-btn" onclick="scrollToTop()" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Feza<span>Mattresses</span></h3>
+                    <p>Kerala's premier mattress manufacturer since 2010. Proudly serving all 14 districts with premium sleep solutions crafted in our Palakkad facility.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Best Mattresses Kerala</a></li>
+                        <li><a href="index.html#about">About Feza</a></li>
+                        <li><a href="index.html#custom">Custom Mattresses</a></li>
+                        <li><a href="index.html#contact">Contact Kerala Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kerala's Best Mattresses</h4>
+                    <ul>
+                        <li><a href="#">Memory Foam Mattresses</a></li>
+                        <li><a href="#">Natural Latex Mattresses</a></li>
+                        <li><a href="#">Spring Mattresses</a></li>
+                        <li><a href="#">Orthopaedic Mattresses</a></li>
+                        <li><a href="#">Kerala Coir Mattresses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kerala Service Areas</h4>
+                    <ul>
+                        <li><a href="#">Mattresses Kochi</a></li>
+                        <li><a href="#">Mattresses Palakkad</a></li>
+                        <li><a href="#">Mattresses Thrissur</a></li>
+                        <li><a href="#">Mattresses Kozhikode</a></li>
+                        <li><a href="#">All Kerala Districts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Kerala HQ</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> NIDA, KANJIKODE, PALAKKAD, KERALA - 678621</p>
+                        <p><i class="fas fa-phone"></i> +91 9605600614</p>
+                        <p><i class="fas fa-envelope"></i> nobletech70@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Feza Mattresses - Kerala's #1 Premium Mattress Brand. All rights reserved. | Proudly Made in Kerala</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="animation.js"></script>
+    <script src="preloader-animations.js"></script>
+
+    <script>
+        // Product Details Page Specific JavaScript
+        let currentProduct = null;
+        let selectedSize = "72x36";
+        let selectedThickness = "6";
+
+        // Initialize product details page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get product ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+            
+            if (productId && products) {
+                currentProduct = products.find(p => p.id === productId);
+                if (currentProduct) {
+                    loadProductDetails(currentProduct);
+                    loadRelatedProducts(currentProduct);
+                    updateSEO(currentProduct);
+                } else {
+                    // Redirect to home if product not found
+                    window.location.href = 'index.html';
+                }
+            } else {
+                // Redirect to home if no product ID
+                window.location.href = 'index.html';
+            }
+
+            // Initialize size guide functionality
+            initializeSizeGuide();
+        });
+
+        function loadProductDetails(product) {
+            // Update product information
+            document.getElementById('product-title').textContent = product.name;
+            document.getElementById('product-subtitle').textContent = product.type;
+            document.getElementById('product-price').textContent = `₹${product.price.toLocaleString()}`;
+            document.getElementById('product-description').textContent = product.description;
+            
+            // Update main image
+            document.getElementById('main-product-image').src = product.image;
+            document.getElementById('main-product-image').alt = product.name;
+
+            // Load product thumbnails (using same image for demo)
+            const thumbnailsContainer = document.getElementById('product-thumbnails');
+            thumbnailsContainer.innerHTML = '';
+            for (let i = 0; i < 3; i++) {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = product.image;
+                thumbnail.alt = `${product.name} view ${i + 1}`;
+                thumbnail.className = 'thumbnail';
+                if (i === 0) thumbnail.classList.add('active');
+                thumbnail.onclick = () => changeMainImage(product.image, thumbnail);
+                thumbnailsContainer.appendChild(thumbnail);
+            }
+
+            // Load product features
+            const featuresGrid = document.getElementById('product-features-grid');
+            featuresGrid.innerHTML = '';
+            product.features.forEach(feature => {
+                const featureItem = document.createElement('div');
+                featureItem.className = 'feature-item';
+                featureItem.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <span>${feature}</span>
+                `;
+                featuresGrid.appendChild(featureItem);
+            });
+
+            // Load size options
+            loadSizeOptions();
+
+            // Load thickness options
+            loadThicknessOptions();
+
+            // Load mattress layers if available
+            if (product.layers) {
+                loadMattressLayers(product.layers);
+            } else {
+                document.getElementById('mattress-layers-section').style.display = 'none';
+            }
+
+            // Setup buy now button
+            setupBuyNowButton(product);
+        }
+
+        function changeMainImage(src, thumbnail) {
+            document.getElementById('main-product-image').src = src;
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        function loadSizeOptions() {
+            const sizeOptionsGrid = document.getElementById('size-options-grid');
+            const sizes = [
+                '72x30', '72x36', '72x42', '72x48', '72x54', '72x60', '72x72',
+                '75x30', '75x36', '75x42', '75x48', '75x54', '75x60', '75x72',
+                '78x30', '78x36', '78x42', '78x48', '78x54', '78x60', '78x72',
+                '84x30', '84x36', '84x42', '84x48', '84x54', '84x60', '84x72'
+            ];
+
+            sizeOptionsGrid.innerHTML = '';
+            sizes.forEach(size => {
+                const sizeOption = document.createElement('div');
+                sizeOption.className = 'size-option';
+                if (size === selectedSize) sizeOption.classList.add('selected');
+                sizeOption.textContent = size;
+                sizeOption.onclick = () => selectSize(size, sizeOption);
+                sizeOptionsGrid.appendChild(sizeOption);
+            });
+        }
+
+        function loadThicknessOptions() {
+            const thicknessOptions = document.getElementById('thickness-options');
+            const thicknesses = [
+                { value: '6', label: '6 inches (Standard)' },
+                { value: '8', label: '8 inches (Premium)' }
+            ];
+
+            thicknessOptions.innerHTML = '';
+            thicknesses.forEach(thickness => {
+                const thicknessOption = document.createElement('div');
+                thicknessOption.className = 'thickness-option';
+                if (thickness.value === selectedThickness) thicknessOption.classList.add('selected');
+                thicknessOption.innerHTML = `
+                    <strong>${thickness.label}</strong>
+                    <small>Perfect for Kerala climate</small>
+                `;
+                thicknessOption.onclick = () => selectThickness(thickness.value, thicknessOption);
+                thicknessOptions.appendChild(thicknessOption);
+            });
+        }
+
+        function selectSize(size, element) {
+            selectedSize = size;
+            document.querySelectorAll('.size-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function selectThickness(thickness, element) {
+            selectedThickness = thickness;
+            document.querySelectorAll('.thickness-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function loadMattressLayers(layers) {
+            const layersContainer = document.getElementById('layers-diagram');
+            layersContainer.innerHTML = '';
+            
+            layers.forEach((layer, index) => {
+                const layerElement = document.createElement('div');
+                layerElement.className = 'layer';
+                layerElement.textContent = layer;
+                layerElement.style.animationDelay = `${index * 0.1}s`;
+                layersContainer.appendChild(layerElement);
+            });
+        }
+
+        function setupBuyNowButton(product) {
+            const buyNowBtn = document.getElementById('buy-now-btn');
+            buyNowBtn.onclick = () => {
+                const message = `🛏️ *Feza Mattresses Order*\n\n` +
+                    `📋 *Product Details:*\n` +
+                    `${product.name} (${product.type})\n` +
+                    `Size: ${selectedSize} inches\n` +
+                    `Thickness: ${selectedThickness} inches\n` +
+                    `Price: ₹${product.price.toLocaleString()}\n\n` +
+                    `📞 Please confirm this order and provide delivery details for Kerala.`;
+
+                const whatsappUrl = `https://wa.me/919605600614?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            };
+        }
+
+        function loadRelatedProducts(currentProduct) {
+            const relatedGrid = document.getElementById('related-products-grid');
+            const relatedProducts = products
+                .filter(p => p.id !== currentProduct.id && p.category === currentProduct.category)
+                .slice(0, 3);
+
+            relatedGrid.innerHTML = '';
+            relatedProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'related-product-card';
+                productCard.onclick = () => {
+                    window.location.href = `product-details.html?id=${product.id}`;
+                };
+
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="related-product-image">
+                    <div class="related-product-info">
+                        <h3 class="related-product-name">${product.name}</h3>
+                        <p class="related-product-type">${product.type}</p>
+                        <div class="related-product-price">₹${product.price.toLocaleString()}</div>
+                        <div class="related-product-features">
+                            ${product.features.slice(0, 3).map(feature => 
+                                `<span class="related-feature-tag">${feature}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
+                relatedGrid.appendChild(productCard);
+            });
+        }
+
+        function updateSEO(product) {
+            // Update page title and meta tags
+            document.getElementById('page-title').textContent = `${product.name} - ${product.type} | Feza Mattresses Kerala`;
+            document.getElementById('page-description').content = `${product.description} Premium ${product.type} from Kerala's #1 mattress brand.`;
+            document.getElementById('og-title').content = `${product.name} - ${product.type} | Feza Mattresses`;
+            document.getElementById('og-description').content = product.description;
+            document.getElementById('og-image').content = product.image;
+        }
+
+        function initializeSizeGuide() {
+            // Size guide modal functionality
+            const sizeOptions = document.querySelectorAll('#size-guide-modal .size-option');
+            const thicknessOptions = document.querySelectorAll('#size-guide-modal .thickness-option');
+            
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    sizeOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('selected-size').textContent = this.dataset.size + ' inches';
+                });
+            });
+
+            thicknessOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    thicknessOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('selected-thickness').textContent = this.textContent;
+                });
+            });
+        }
+
+        function openSizeGuide() {
+            document.getElementById('size-guide-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSizeGuide() {
+            document.getElementById('size-guide-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function applySizeSelection() {
+            const selectedSizeElement = document.querySelector('#size-guide-modal .size-option.active');
+            const selectedThicknessElement = document.querySelector('#size-guide-modal .thickness-option.active');
+            
+            if (selectedSizeElement) {
+                selectedSize = selectedSizeElement.dataset.size;
+                // Update main page size selection
+                document.querySelectorAll('#size-options-grid .size-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                    if (opt.textContent === selectedSize) {
+                        opt.classList.add('selected');
+                    }
+                });
+            }
+            
+            if (selectedThicknessElement) {
+                selectedThickness = selectedThicknessElement.dataset.thickness === '152.4' ? '6' : '8';
+                // Update main page thickness selection
+                document.querySelectorAll('#thickness-options .thickness-option').forEach((opt, index) => {
+                    opt.classList.remove('selected');
+                    if ((index === 0 && selectedThickness === '6') || (index === 1 && selectedThickness === '8')) {
+                        opt.classList.add('selected');
+                    }
+                });
+            }
+            
+            closeSizeGuide();
+            showNotification('Size selection applied successfully!');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('size-guide-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSizeGuide();
+            }
+        });
+
+        function openWhatsAppChat() {
+            const message = `👋 Hi! I'm interested in ${currentProduct ? currentProduct.name : 'Feza Mattresses'}. Can you help me with more details?`;
+            const whatsappUrl = `https://wa.me/919605600614?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add to cart functionality for product details page
+        function addCurrentProductToCart() {
+            if (currentProduct) {
+                addToCart(currentProduct.id);
+            }
+        }
+
+        // Smooth scroll animations
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.feature-item, .layer, .related-product-card');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial state for animated elements
+            const animatedElements = document.querySelectorAll('.feature-item, .layer, .related-product-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>

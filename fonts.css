@@ -1,0 +1,137 @@
+/* Custom Fonts */
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* Font Variables */
+:root {
+  --heading-font: "Cormorant Garamond", serif;
+  --body-font: "Montserrat", sans-serif;
+  --accent-font: "Raleway", sans-serif;
+  --logo-font: "Playfair Display", serif;
+}
+
+/* Apply Fonts */
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-solid,
+.btn-outline {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-family: var(--accent-font);
+  font-weight: 500;
+}
+
+.nav-logo h2 {
+  font-family: var(--logo-font);
+}
+
+.feature-card h4,
+.stat-label,
+.product-title,
+.testimonial-author h4,
+.award-item h3,
+.feature-item h3,
+.district-item h4 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+.stat-number {
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+.product-price,
+.product-detail-price,
+.size-dimensions,
+.rec-price {
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  font-family: var(--heading-font);
+}
+
+/* Custom Font Styles */
+.gradient-text {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.section-header h2 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.section-header p {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* Enhance specific text elements */
+.hero-text h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-family: var(--accent-font);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 400;
+}
+
+.about-us-quote {
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  line-height: 1.4;
+}
+
+.about-us-signature {
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.feature-tag {
+  font-family: var(--accent-font);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
